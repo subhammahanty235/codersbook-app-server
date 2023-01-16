@@ -70,34 +70,9 @@ function Sidenav(props) {
                 })
               }
 
-              {/* <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/> */}
-              {/* <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/>
-              <UserCard id={"6392208ecd08e0e6678ff4f5"}/> */}
-              {/* {
-                userdata.followers.map((follower)=>{
-
-                })
-              } */}
+             
             </div>
-            {/* <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              {/* <button type="button" class="btn btn-primary">Save changes</button> */}
-            {/* </div> */}
+            
           </div>
         </div>
       </div>
@@ -119,10 +94,7 @@ function Sidenav(props) {
                 })
               }
             </div>
-            {/* <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div> */}
+            
           </div>
         </div>
       </div>

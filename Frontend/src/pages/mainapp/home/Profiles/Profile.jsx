@@ -16,7 +16,7 @@ function Profile(props) {
     useEffect(() => {
         // console.log(id)
         const fetch_data = async () => {
-            const mydata_raw = await fetch(`http://localhost:5000/api/auth/getdata/${profileid}`, {
+            const mydata_raw = await fetch(`${process.env.REACT_APP_API_KEY}auth/getdata/${profileid}`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json'

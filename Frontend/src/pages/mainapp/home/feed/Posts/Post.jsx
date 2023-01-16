@@ -26,7 +26,7 @@ function Post(props) {
 
         }
         else {
-            let statusdata = await fetch(`http://localhost:5000/api/post/likepost/${post._id}`, {
+            let statusdata = await fetch(`${process.env.REACT_APP_API_KEY}post/likepost/${post._id}`, {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ function Post(props) {
 
     const commentonPost = async () => {
         if (commenttext.comment !== "") {
-            let resp = await fetch(`http://localhost:5000/api/post/comment/${post._id}`, {
+            let resp = await fetch(`${process.env.REACT_APP_API_KEY}post/comment/${post._id}`, {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ function Post(props) {
         // console.log(myid)
 
         const fetch_data = async () => {
-            const userdata_raw = await fetch(`http://localhost:5000/api/auth/getdata/${post.uploadedBy}`, {
+            const userdata_raw = await fetch(`${process.env.REACT_APP_API_KEY}auth/getdata/${post.uploadedBy}`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json'

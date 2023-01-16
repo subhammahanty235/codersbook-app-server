@@ -9,12 +9,12 @@ function Signup() {
     }
         const [credential, setcredential] = useState({ email: "", password: "" , name:"" });
 
-        const baseurl = "http://localhost:5000/api"
+        
         const login_func = async () => {
             if (credential.username !== "" && credential.password !== "") {
                 console.log(credential)
                 try {
-                    const responce = await fetch("http://localhost:5000/api/auth/signup", {
+                    const responce = await fetch(`${process.env.REACT_APP_API_KEY}auth/signup`, {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'

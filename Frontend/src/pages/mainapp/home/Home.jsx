@@ -58,7 +58,7 @@ function Home() {
         const mydetails = JSON.parse(localStorage.getItem('sclmdia_73sub67_details'));
 
         // console.log(mydetails)
-        const data = await fetch(`http://localhost:5000/api/auth/getdata/${mydetails._id}`, {
+        const data = await fetch(`${process.env.REACT_APP_API_KEY}auth/getdata/${mydetails._id}`, {
           method: "GET",
           headers: {
             'Content-Type': 'application/json'

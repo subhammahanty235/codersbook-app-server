@@ -3,12 +3,12 @@ import './usercard.css'
 function UserCard(props) {
     const { id } = props
     const [myinfo, setmyInfo] = useState();
-    
+
     useEffect(() => {
         // console.log(id)
 
         const fetch_data = async () => {
-            const mydata_raw = await fetch(`http://localhost:5000/api/auth/getdata/${id}`, {
+            const mydata_raw = await fetch(`${process.env.REACT_APP_API_KEY}auth/getdata/${id}`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json'

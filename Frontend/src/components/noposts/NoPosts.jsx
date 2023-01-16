@@ -1,5 +1,5 @@
 import React from 'react'
-import Beargif from '../../images/Animaker-bear-unscreen.gif'
+import Beargif from '../../images/boredbear.png'
 import './noposts.css'
 function NoPosts() {
   return (

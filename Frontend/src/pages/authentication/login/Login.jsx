@@ -5,15 +5,16 @@ import { useNavigate } from 'react-router-dom'
 function Login() {
     const navigate = useNavigate()
     const [credential, setcredential] = useState({ email: "", password: "" });
-    const baseurl = "http://localhost:5000/api"
+    // const baseurl = "http://localhost:5000/api"
     const onChange = (e) => {
         setcredential({ ...credential, [e.target.name]: e.target.value })
     }
     const login_func = async () => {
+        // console.log(process.env.REACT_APP_API_KEY7)
         if (credential.email !== "" && credential.password !== "") {
             console.log(credential.email)
             try {
-                const responce = await fetch("http://localhost:5000/api/auth/login", {
+                const responce = await fetch(`${process.env.REACT_APP_API_KEY}auth/login`, {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'

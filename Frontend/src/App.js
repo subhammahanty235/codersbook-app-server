@@ -9,12 +9,13 @@ import Togglepagestate from './context/pagestoggle/Togglepagestate';
 import {
   BrowserRouter, Routes,
   Route,
-
+  
   // Link
 } from "react-router-dom";
 
 
 function App() {
+  // require('dotenv').config()
  
   // const navigate = useNavigate()
 

@@ -9,7 +9,7 @@ function Posts(props) {
 
     useEffect(() => {
         const fetch_data = async () => {
-            const mydata_raw = await fetch(`http://localhost:5000/api/post/allposts`, {
+            const mydata_raw = await fetch(`${process.env.REACT_APP_API_KEY}post/allposts`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json'

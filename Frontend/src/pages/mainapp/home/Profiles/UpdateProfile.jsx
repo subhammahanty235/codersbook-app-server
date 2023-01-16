@@ -21,7 +21,7 @@ function UpdateProfile() {
     useEffect(() => {
 
         const fetch_data = async () => {
-            const mydata_raw = await fetch(`http://localhost:5000/api/auth/getdata/${JSON.parse(localStorage.getItem('sclmdia_73sub67_details'))._id}`, {
+            const mydata_raw = await fetch(`${process.env.REACT_APP_API_KEY}auth/getdata/${JSON.parse(localStorage.getItem('sclmdia_73sub67_details'))._id}`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ function UpdateProfile() {
                 data.append("file", imageSrc);
                 data.append("upload_preset", "utk7tsdj");
                 data.append("cloud_name", "dbnqqpobe");
-                await fetch("https://api.cloudinary.com/v1_1/dbnqqpobe/image/upload", {
+                await fetch(process.env.REACT_APP_CLOUDINARY_API, {
                     method: "POST",
                     body: data,
                 }).then((res) => res.json())
@@ -68,7 +68,7 @@ function UpdateProfile() {
                         console.log(err)
                     })
             }
-            let data = await fetch('http://localhost:5000/api/auth/updateprofile', {
+            let data = await fetch(`${process.env.REACT_APP_API_KEY}auth/updateprofile`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -99,7 +99,7 @@ function UpdateProfile() {
     const checkusername = async () => {
         // const userdata = username;
         const username = myinfo.username
-        let data = await fetch(`http://localhost:5000/api/auth/checkusername/${username}`, {
+        let data = await fetch(`${process.env.REACT_APP_API_KEY}auth/checkusername/${username}`, {
             method: "GET",
         })
 

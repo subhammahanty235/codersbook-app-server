@@ -15,7 +15,7 @@ function Postnew(props) {
                 data.append("file", image);
                 data.append("upload_preset", "utk7tsdj");
                 data.append("cloud_name", "dbnqqpobe");
-                await fetch("https://api.cloudinary.com/v1_1/dbnqqpobe/image/upload", {
+                await fetch(process.env.REACT_APP_CLOUDINARY_API, {
                     method: "POST",
                     body: data,
                 }).then((res) => res.json())
@@ -31,7 +31,7 @@ function Postnew(props) {
                 data_to_upload.content = text
             }
 
-            let data = await fetch('http://localhost:5000/api/post/addpost', {
+            let data = await fetch(`${process.env.REACT_APP_API_KEY}post/addpost`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
