@@ -8,7 +8,7 @@ const createprofile = async()=>{
         return res.status(400).json({status:false , message:"user not found , please re login"})
     }
     try {
-        const createprofile = await User.findByIdAndUpdate(userid,{$set:data},{new:true});
+        await User.findByIdAndUpdate(userid,{$set:data},{new:true});
         res.status(200).json({status:true , message:"Profile Created Successfully"});
     } catch (error) {
         res.send(error)
@@ -18,7 +18,7 @@ const createprofile = async()=>{
 
 const editprofile = async(req,res)=>{
     const data = req.body;
-    console.log(data)
+    // console.log(data)
     let userId = req.user.id;
     let newdata = {};
     if(data.name)newdata.name = data.name;
@@ -28,7 +28,7 @@ const editprofile = async(req,res)=>{
     if(data.email)newdata.email = data.email
     if(data.bio){
         let newbio = data.bio.replace(/\\n/g, '\n');
-        console.log(newbio)
+        // console.log(newbio)
         newdata.bio = newbio
     }
     
@@ -58,7 +58,7 @@ const followuser = async(req,res)=>{
     const othid = req.params.id;
     let flag = false;
     try {
-
+        
         await User.findByIdAndUpdate(othid, { $push: { followers: myid } });
         await User.findByIdAndUpdate(myid, { $push: { following: othid } });
         flag = true;

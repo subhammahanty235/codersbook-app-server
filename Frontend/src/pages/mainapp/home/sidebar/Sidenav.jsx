@@ -10,16 +10,20 @@ function Sidenav(props) {
   const content_page = useContext(togglepagecontext)
   const { pmppage, changepage, setprofileid } = content_page
   const navigate = useNavigate()
-  const { userdata} = props;
+  const { userdata , setsidenav} = props;
   // const [pmp , setpmp] = useState(pmppage)
   const profileopenbtn = ()=>{
     setprofileid(userdata.user._id)
     changepage(2)
+    setsidenav(false)
+
   }
 
   const logout = ()=>{
+
     localStorage.removeItem('sclmdia_73sub67_details')
     localStorage.removeItem('sclmdia_73sub67_token')
+
     navigate('/login')
   }
 
@@ -36,15 +40,18 @@ function Sidenav(props) {
         </div>
 
         <div className="otherbuttons">
-          <button className={(pmppage == 1) ? 'active' : ''} onClick={() => { changepage(1) }}>Home</button>
+          <button className={(pmppage == 1) ? 'active' : ''}  onClick={() => { changepage(1);setsidenav(false) }}>Home</button>
           <button data-bs-toggle="modal" data-bs-target="#followersmodal">Followers</button>
           <button data-bs-toggle="modal" data-bs-target="#followingmodal">Followings</button>
-          <button onClick={() => { changepage(3) }} className={pmppage == 3 ? 'active' : ''}>My Posts</button>
+          <button onClick={() => { changepage(3);setsidenav(false) }} className={pmppage == 3 ? 'active' : ''}>My Posts</button>
           {/* <div className="imhgy"> */}
 
           <button>Saved</button>
           {/* </div> */}
-          <button onClick={logout}>Log Out</button>
+          {/* <hr /> */}
+          <br />
+          <br />
+          <button  onClick={logout}>Log Out</button>
         </div>
 
       </div>
